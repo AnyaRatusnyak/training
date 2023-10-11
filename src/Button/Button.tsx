@@ -1,17 +1,14 @@
-import React from "react";
-import { useState } from "react";
+import { FC } from "react";
 
-const Button = () => {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount(count + 1);
-  };
+type BattonProps = { text: number; onClick: () => void };
+
+const Batton: FC<BattonProps> = ({ text, onClick }) => {
   return (
     <div>
-      <button type="button" className="btn btn-primary" onClick={handleClick}>
-        Clicked {count} times
+      <button type="button" className="btn btn-primary" onClick={onClick}>
+        Clicked {text} times
       </button>
     </div>
   );
 };
-export default Button;
+export default Batton;
